@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorAzulEscuro" format="color" />
+    <attr name="colorOnAzulEscuro" format="color" />
+    <attr name="colorAzulEscuroContainer" format="color" />
+    <attr name="colorOnAzulEscuroContainer" format="color" />
+    <attr name="harmonizeAzulEscuro" format="boolean" />
+    <attr name="colorAzulPiscina" format="color" />
+    <attr name="colorOnAzulPiscina" format="color" />
+    <attr name="colorAzulPiscinaContainer" format="color" />
+    <attr name="colorOnAzulPiscinaContainer" format="color" />
+    <attr name="harmonizeAzulPiscina" format="boolean" />
+    <attr name="colorAmareloClaro" format="color" />
+    <attr name="colorOnAmareloClaro" format="color" />
+    <attr name="colorAmareloClaroContainer" format="color" />
+    <attr name="colorOnAmareloClaroContainer" format="color" />
+    <attr name="harmonizeAmareloClaro" format="boolean" />
+    <attr name="backgroundTexture" format="reference" />
+</resources>
