@@ -9,13 +9,14 @@
 
 
     <ImageButton
-        android:layout_margin="15dp"
-        android:padding="15dp"
-        android:foreground="@drawable/ripple_highlight"
-        android:background="@drawable/rounded_corners_button"
         android:id="@+id/imageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/rounded_corners_button"
+        android:foreground="@drawable/ripple_highlight"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/undobutton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/home_icon" />
@@ -25,11 +26,32 @@
         android:id="@+id/team1name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/khand"
         android:text="@string/team1name"
-        app:layout_constraintBottom_toTopOf="@+id/team1score"
+        android:shadowColor="?attr/colorAzulPiscina"
+        android:shadowRadius="5"
+        android:shadowDy="7.5"
+        android:textColor="?attr/colorTextContrast"
+        android:textFontWeight="700"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/score1label"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+
+    <Button
+        android:id="@+id/score1label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/volleyball_xs"
+        android:padding="7.5dp"
+        android:drawableEnd="@drawable/plus"
+        android:foreground="@drawable/ripple_highlight"
+        android:background="@drawable/rounded_corners_button"
+        app:layout_constraintBottom_toTopOf="@id/team1score"
+        app:layout_constraintEnd_toEndOf="@+id/team1score"
+        app:layout_constraintStart_toStartOf="@+id/team1score"
+        app:layout_constraintTop_toTopOf="@+id/team1score" />
 
     <Button
         android:id="@+id/team1score"
@@ -93,6 +115,20 @@
         app:layout_constraintWidth_percent="0.2" />
 
     <Button
+        android:id="@+id/score2label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/volleyball_xs"
+        android:drawableEnd="@drawable/plus"
+        android:padding="7.5dp"
+        android:foreground="@drawable/ripple_highlight"
+        android:background="@drawable/rounded_corners_button"
+        app:layout_constraintBottom_toTopOf="@+id/team2score"
+        app:layout_constraintEnd_toEndOf="@+id/team2score"
+        app:layout_constraintStart_toStartOf="@+id/team2score"
+        app:layout_constraintTop_toTopOf="@+id/team2score" />
+
+    <Button
         android:id="@+id/team2score"
         android:background="@drawable/rounded_corners"
         android:backgroundTint="?attr/colorTextContrast"
@@ -116,8 +152,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/team2name"
+        android:shadowColor="?attr/colorAzulPiscina"
+        android:shadowRadius="5"
+        android:shadowDy="7.5"
+        android:textSize="36sp"
+        android:textColor="?attr/colorTextContrast"
+        android:fontFamily="@font/khand"
+        android:textFontWeight="700"
+        app:layout_constraintBottom_toTopOf="@+id/pausebutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/team2score" />
+
+    <ImageButton
+        android:id="@+id/undobutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/rounded_corners_button"
+        android:foreground="@drawable/ripple_highlight"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/team2name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/team2name"
+        app:srcCompat="@drawable/undo" />
+
+    <ImageButton
+        android:id="@+id/pausebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:foreground="@drawable/ripple_highlight"
+        android:background="@drawable/rounded_corners_button"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/team2name"
+        app:layout_constraintStart_toEndOf="@+id/team2name"
+        app:srcCompat="@drawable/pause" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
