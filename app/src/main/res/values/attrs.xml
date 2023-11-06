@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <attr name="colorButtonBackground" format="color" />
+    <attr name="colorButtonBorder" format="color" />
     <attr name="colorAzulEscuro" format="color" />
     <attr name="colorOnAzulEscuro" format="color" />
     <attr name="colorAzulEscuroContainer" format="color" />
@@ -16,4 +18,5 @@
     <attr name="colorOnAmareloClaroContainer" format="color" />
     <attr name="harmonizeAmareloClaro" format="boolean" />
     <attr name="backgroundTexture" format="reference" />
+    <attr name="colorTextContrast" format="color" />
 </resources>

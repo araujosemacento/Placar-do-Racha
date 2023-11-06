@@ -2,5 +2,13 @@
     <string name="app_name">Placar do Racha</string>
     <string name="caps_app_name">PLACAR DO RACHA</string>
     <string name="start_button">INICIAR PARTIDA</string>
-    <string name="history_button">JOGOS RECENTES</string>
+    <string name="history_button">PARTIDAS RECENTES</string>
+    <string name="home_button">Botão para página inicial</string>
+    <string name="history">HISTÓRICO</string>
+    <string name="no_matches_warning">Sem partidas salvas. Contabilize mais partidas para ver seus placares!</string>
+    <string name="time">00:00</string>
+    <string name="team1score">00</string>
+    <string name="team2score">00</string>
+    <string name="team1name">Time 1</string>
+    <string name="team2name">Time 2</string>
 </resources>

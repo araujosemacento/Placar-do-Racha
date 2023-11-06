@@ -1,5 +1,5 @@
 <resources>
-    <style name="Theme.PlacarDoRacha" parent="Theme.Material3.Dark.NoActionBar">
+    <style name="Theme.PlacarDoRacha" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/md_theme_dark_primary</item>
         <item name="colorOnPrimary">@color/md_theme_dark_onPrimary</item>
         <item name="colorPrimaryContainer">@color/md_theme_dark_primaryContainer</item>
@@ -41,7 +41,11 @@
         <item name="colorOnAmareloClaroContainer">#ffe08e</item>
         <item name="harmonizeAmareloClaro">false</item>
         <item name="colorPrimaryInverse">@color/md_theme_dark_inversePrimary</item>
-        <item name="android:statusBarColor">#000d33</item>
+        <item name="android:statusBarColor">#15436a</item>
         <item name="backgroundTexture">@drawable/background_dark</item>
+        <item name="colorButtonBackground">#002f33</item>
+        <item name="colorButtonBorder">#005e66</item>
+        <item name="colorControlHighlight">?attr/colorPrimaryInverse</item>
+        <item name="colorTextContrast">#96D2FF</item>
     </style>
 </resources>
