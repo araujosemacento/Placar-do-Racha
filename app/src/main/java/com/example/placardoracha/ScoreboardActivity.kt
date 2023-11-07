@@ -1,11 +1,8 @@
 package com.example.placardoracha
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.os.Handler
-import android.view.MotionEvent
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
@@ -20,7 +17,6 @@ class ScoreboardActivity : AppCompatActivity() {
   var storedScore: Array<Int> = arrayOf(0, 0)
   var currentScore: Array<Int> = arrayOf(0, 0)
 
-  @SuppressLint("ClickableViewAccessibility")
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.scoreboard_layout)
@@ -47,28 +43,28 @@ class ScoreboardActivity : AppCompatActivity() {
       val score = team1Score.text.toString().toInt()
       team1Score.text = String.format("%02d", score + 1)
       currentScore[0] = score + 1
-      lastScoreUpdateTime = System.currentTimeMillis() // Adicionado
+      lastScoreUpdateTime = System.currentTimeMillis()
     }
 
     team1Score.setOnClickListener {
       val score = team1Score.text.toString().toInt()
       team1Score.text = String.format("%02d", score + 1)
       currentScore[0] = score + 1
-      lastScoreUpdateTime = System.currentTimeMillis() // Adicionado
+      lastScoreUpdateTime = System.currentTimeMillis()
     }
 
     score2Label.setOnClickListener {
       val score = team2Score.text.toString().toInt()
       team2Score.text = String.format("%02d", score + 1)
       currentScore[1] = score + 1
-      lastScoreUpdateTime = System.currentTimeMillis() // Adicionado
+      lastScoreUpdateTime = System.currentTimeMillis()
     }
 
     team2Score.setOnClickListener {
       val score = team2Score.text.toString().toInt()
       team2Score.text = String.format("%02d", score + 1)
       currentScore[1] = score + 1
-      lastScoreUpdateTime = System.currentTimeMillis() // Adicionado
+      lastScoreUpdateTime = System.currentTimeMillis()
     }
 
     timer =
@@ -134,18 +130,17 @@ class ScoreboardActivity : AppCompatActivity() {
     super.onSaveInstanceState(outState)
     outState.putIntArray("currentScore", currentScore.toIntArray())
     outState.putIntArray("storedScore", storedScore.toIntArray())
-
     outState.putLong("lastScoreUpdateTime", lastScoreUpdateTime)
     outState.putInt("second", second)
     outState.putBoolean("isTimerRunning", isTimerRunning)
   }
 
   override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-    super.onRestoreInstanceState(savedInstanceState)
     currentScore = savedInstanceState.getIntArray("currentScore")?.toTypedArray() ?: arrayOf(0, 0)
     storedScore = savedInstanceState.getIntArray("storedScore")?.toTypedArray() ?: arrayOf(0, 0)
     lastScoreUpdateTime = savedInstanceState.getLong("lastScoreUpdateTime")
     second = savedInstanceState.getInt("second")
     isTimerRunning = savedInstanceState.getBoolean("isTimerRunning")
+    super.onRestoreInstanceState(savedInstanceState)
   }
 }
