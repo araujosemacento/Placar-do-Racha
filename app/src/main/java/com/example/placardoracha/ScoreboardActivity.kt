@@ -1,8 +1,11 @@
 package com.example.placardoracha
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.Handler
+import android.view.MotionEvent
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
@@ -17,6 +20,7 @@ class ScoreboardActivity : AppCompatActivity() {
   var storedScore: Array<Int> = arrayOf(0, 0)
   var currentScore: Array<Int> = arrayOf(0, 0)
 
+  @SuppressLint("ClickableViewAccessibility")
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.scoreboard_layout)
@@ -104,7 +108,7 @@ class ScoreboardActivity : AppCompatActivity() {
     undoButton.setOnClickListener {
       val currentTime = System.currentTimeMillis()
       val timeDifference = currentTime - lastScoreUpdateTime
-      if (timeDifference > 1000 && timeDifference < 1200) {
+      if (timeDifference > 250 && timeDifference < 500) {
         storedScore[0] = currentScore[0]
         storedScore[1] = currentScore[1]
         lastScoreUpdateTime = currentTime
@@ -128,9 +132,20 @@ class ScoreboardActivity : AppCompatActivity() {
 
   override fun onSaveInstanceState(outState: Bundle) {
     super.onSaveInstanceState(outState)
+    outState.putIntArray("currentScore", currentScore.toIntArray())
+    outState.putIntArray("storedScore", storedScore.toIntArray())
+
+    outState.putLong("lastScoreUpdateTime", lastScoreUpdateTime)
+    outState.putInt("second", second)
+    outState.putBoolean("isTimerRunning", isTimerRunning)
   }
 
   override fun onRestoreInstanceState(savedInstanceState: Bundle) {
     super.onRestoreInstanceState(savedInstanceState)
+    currentScore = savedInstanceState.getIntArray("currentScore")?.toTypedArray() ?: arrayOf(0, 0)
+    storedScore = savedInstanceState.getIntArray("storedScore")?.toTypedArray() ?: arrayOf(0, 0)
+    lastScoreUpdateTime = savedInstanceState.getLong("lastScoreUpdateTime")
+    second = savedInstanceState.getInt("second")
+    isTimerRunning = savedInstanceState.getBoolean("isTimerRunning")
   }
 }
